@@ -4,11 +4,14 @@
   background: #6ad6ad;
   padding: 10px 5px;
   .input-container {
+    max-width: 500px;
+    width: 100%;
   }
   .search {
     padding: 5px 10px;
     border: 5px;
     border-radius: 5px;
     font-size: 16px;
+    width: 100%;
   }
 }
