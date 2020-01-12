@@ -1,40 +1,29 @@
-<app-header></app-header>
+<app-header (search)="searchForABook($event)"></app-header>
 <div class="books-list">
-  <div class="book">
-    <h5 class="title">xyx book asdja jashd </h5>
-    <h5 class="author">Abx</h5>
-    <h5 class="description">23 Things They Don't Tell You About Capitalism</h5>
-  </div>
-  <div class="book">
-    <h5 class="title">xyx book</h5>
-    <h5 class="author">Abx</h5>
-    <h5 class="description">23 Things They Don't Tell You About Capitalism They Don't Tell You About Capitalism They
-      Don't Tell You About Capitalism They Don't Tell You About Capitalism They Don't Tell You About Capitalism</h5>
-  </div>
-  <div class="book">
-    <h5 class="title">xyx book</h5>
-    <h5 class="author">Abx</h5>
-    <h5 class="description">23 Things They Don't Tell You About Capitalism</h5>
-    <button class="edit" (click)="edit(index)">Edit</button>
-  </div>
-  <div class="book">
-    <h5 class="title">xyx book</h5>
-    <h5 class="author">Abx</h5>
-    <h5 class="description">23 Things They Don't Tell You About Capitalism</h5>
-  </div>
-  <div class="book">
-    <h5 class="title">xyx book</h5>
-    <h5 class="author">Abx</h5>
-    <h5 class="description">23 Things They Don't Tell You About Capitalism</h5>
-  </div>
-  <div class="book">
-    <h5 class="title">xyx book</h5>
-    <h5 class="author">Abx</h5>
-    <h5 class="description">23 Things They Don't Tell You About Capitalism</h5>
-  </div>
-  <div class="book">
-    <h5 class="title">xyx book</h5>
-    <h5 class="author">Abx</h5>
-    <h5 class="description">23 Things They Don't Tell You About Capitalism</h5>
-  </div>
+  <ng-container *ngIf="(books$ | async)?.length else checkSearch">
+    <div class="book" *ngFor="let book of books$ | async">
+      <h5 class="title">{{book.name}}</h5>
+      <h5 class="author">{{book.author}}</h5>
+      <h5 class="description">{{book.description}}</h5>
+    </div>
+  </ng-container>
+  <ng-template #checkSearch>
+    <div class="error">
+      {{books$ | async}}
+      <h5 *ngIf="searchValue">
+        Books not found for <span>{{searchValue}}</span>
+      </h5>
+      <h5 *ngIf="!searchValue">
+        Search for books
+      </h5>
+    </div>
+  </ng-template>
+</div>
+<div class="actions">
+  <a [routerLink]="['/add']">
+    <button class="btn">Add a Book</button>
+  </a>
+  <a [routerLink]="['/books']">
+    <button class="btn">View Books</button>
+  </a>
 </div>

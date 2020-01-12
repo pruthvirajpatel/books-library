@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
@@ -10,13 +10,14 @@ import { Subject } from 'rxjs';
 export class HeaderComponent implements OnInit {
   searchQuery;
   searchQueryUpdate = new Subject<string>();
+  @Output() search = new EventEmitter<string>();
   constructor() { }
   ngOnInit() {
     this.searchQueryUpdate.pipe(
       debounceTime(600),
       distinctUntilChanged())
       .subscribe(value => {
-        console.log(value);
+        this.search.emit(value);
       });
   }
 }
