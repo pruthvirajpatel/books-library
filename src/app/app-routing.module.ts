@@ -5,12 +5,16 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
-    path: 'home',
-    component: HomeComponent
-  },
-  {
     path: 'add',
     loadChildren: () => import('./add/add.module').then(mod => mod.AddModule),
+  },
+  {
+    path: 'books',
+    loadChildren: () => import('./books/books.module').then(mod => mod.BooksModule),
+  },
+  {
+    path: 'home',
+    component: HomeComponent
   },
   {
     path: '**',
