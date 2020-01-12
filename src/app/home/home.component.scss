@@ -1,0 +1,13 @@
+.actions {
+  flex-wrap: wrap;
+  justify-content: space-around;
+  a {
+    margin: 0px 10px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .actions {
+    justify-content: space-between;
+  }
+}
