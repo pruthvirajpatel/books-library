@@ -1,0 +1,14 @@
+<div class="container">
+  <form method="POST" [formGroup]="booksForm" (ngSubmit)="addBook()" novalidate>
+    <div class="row">
+      <div class="col">
+        <input type="text" placeholder="Book Name *" formControlName="name">
+        <input type="text" placeholder="Author Name *" formControlName="author">
+        <input type="number" placeholder="Count *" formControlName="count">
+        <textarea type="text" placeholder="Description" formControlName="description">
+          </textarea>
+        <input type="submit" [disabled]="booksForm.invalid" value="Add">
+      </div>
+    </div>
+  </form>
+</div>

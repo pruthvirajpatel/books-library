@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+}
+
+/* style the container */
+.container {
+  padding: 20px 0;
+  max-width: 500px;
+  margin: 50px auto;
+  background: #e0e0e0;
+  border-radius: 5px;
+}
+
+/* style inputs and textarea */
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin: 5px 0;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+input:hover {
+  opacity: 1;
+}
+
+/* style the submit button */
+input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  &:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+  }
+}
+
+.col {
+  padding: 0 50px;
+}
+
+@media screen and (max-width: 650px) {
+  .container {
+    margin: 20px;
+  }
+  .col {
+    padding: 0px 20px;
+  }
+}
