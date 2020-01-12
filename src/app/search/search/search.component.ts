@@ -16,6 +16,7 @@ export class SearchComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.ngRedux.dispatch(FindInLibrary({}));
   }
 
   searchForABook(name): void {

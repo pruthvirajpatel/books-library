@@ -4,6 +4,7 @@
     <div class="book" *ngFor="let book of books$ | async">
       <h5 class="title">{{book.name}}</h5>
       <h5 class="author">{{book.author}}</h5>
+      <h5 class="count">Total - {{book.count}}</h5>
       <h5 class="description">{{book.description}}</h5>
     </div>
   </ng-container>

@@ -3,7 +3,6 @@
   flex-flow: wrap;
   justify-content: flex-start;
   .book {
-    cursor: pointer;
     border: 2px solid #e0e0e0;
     background: #fff;
     border-radius: 5px;
@@ -13,6 +12,7 @@
     width: 100%;
     .title,
     .author,
+    .count,
     .description {
       font-weight: 600;
       margin-bottom: 5px;
@@ -24,6 +24,10 @@
     .author {
       color: #666;
       font-size: 18px;
+    }
+    .count {
+      color: #888;
+      font-size: 16px;
     }
 
     .description {
@@ -51,7 +55,7 @@
   h5 {
     font-size: 16px;
   }
-  span{
+  span {
     color: #ff0000;
   }
 }
