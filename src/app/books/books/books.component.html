@@ -10,10 +10,12 @@
   <ng-container *ngIf="(books$ | async)?.length else checkSearch">
     <div class="books-list">
       <div class="book" *ngFor="let book of books$ | async">
+        {{book | json}}
         <h5 class="title"> {{book.name}}</h5>
         <h5 class="author">Author - {{book.author}}</h5>
         <h5 class="count">Total - {{book.count}}</h5>
         <h5 class="description">{{book.description}}</h5>
+        <button class="edit" (click)="edit(book.id)">Edit</button>
       </div>
     </div>
   </ng-container>

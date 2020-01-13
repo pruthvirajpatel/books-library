@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgRedux, select } from '@angular-redux/store';
 import { InitialState } from 'src/app/store/reducer';
-import { FindInLibrary } from 'src/app/store/actions';
+import { SearchInLibrary } from 'src/app/store/actions';
 import { Observable } from 'rxjs';
 @Component({
   selector: 'app-search',
@@ -16,14 +16,11 @@ export class SearchComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.ngRedux.dispatch(FindInLibrary({}));
+    this.ngRedux.dispatch(SearchInLibrary({}));
   }
 
   searchForABook(name): void {
     this.searchValue = name;
-    this.ngRedux.dispatch(FindInLibrary({ name }));
-    // this.ngRedux
-    //   .select<Array<any>>('booksFound')
-    //   .subscribe();
+    this.ngRedux.dispatch(SearchInLibrary({ name }));
   }
 }

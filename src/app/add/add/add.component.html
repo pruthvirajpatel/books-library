@@ -1,15 +1,4 @@
 <div class="container">
-  <div class="actions">
-    <a [routerLink]="['/books']">
-      <button class="btn">View Books</button>
-    </a>
-    <a [routerLink]="['/search']">
-      <button class="btn">Search for a Book</button>
-    </a>
-  </div>
-</div>
-
-<div class="container">
   <form method="POST" [formGroup]="booksForm" (ngSubmit)="addBook()" novalidate>
     <div class="row">
       <div class="col">
@@ -22,4 +11,14 @@
       </div>
     </div>
   </form>
+</div>
+<div class="container">
+  <div class="actions">
+    <a [routerLink]="['/books']">
+      <button class="btn">View Books</button>
+    </a>
+    <a [routerLink]="['/search']">
+      <button class="btn">Search for a Book</button>
+    </a>
+  </div>
 </div>
