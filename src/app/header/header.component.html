@@ -1,7 +1,6 @@
 <header class="header">
   <div class="input-container">
-    <input type="text" placeholder="Search for books" class="search"
-    [(ngModel)]="searchQuery"
-    (ngModelChange)="searchQueryUpdate.next($event)">
+    <input type="text" placeholder="Search books by title or author" class="search" [(ngModel)]="searchQuery"
+      (ngModelChange)="searchQueryUpdate.next($event)">
   </div>
 </header>

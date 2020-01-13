@@ -19,7 +19,10 @@ export function LibraryReducer(state = initialState, action) {
       return Object.assign({},
         {
           ...state,
-          booksFound: [...state.books.filter(book => book.name.toLowerCase().includes(action.payload.name))]
+          booksFound: [...state.books.filter(book => {
+            return (book.name.toLowerCase().includes(action.payload.name) ||
+              book.author.toLowerCase().includes(action.payload.name));
+          })]
         });
     case ActionTypes.Find:
       return {
@@ -37,10 +40,6 @@ export function LibraryReducer(state = initialState, action) {
           ...state,
           books: [...state.books]
         });
-    case ActionTypes.Get:
-      return {
-        ...state
-      };
     default:
       return state;
   }

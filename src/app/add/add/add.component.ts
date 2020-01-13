@@ -39,6 +39,7 @@ export class AddComponent implements OnInit {
           if (value) {
             this.createForm(value[0]);
           } else {
+            this.id = undefined;
             this.createForm();
           }
         });

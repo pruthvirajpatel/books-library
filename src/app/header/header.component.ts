@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   constructor() { }
   ngOnInit() {
     this.searchQueryUpdate.pipe(
-      debounceTime(600),
+      debounceTime(500),
       distinctUntilChanged())
       .subscribe(value => {
         this.search.emit(value);
